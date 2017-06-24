@@ -9,11 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context;
-    private EditText editText;
+    //    private EditText editText;
     private Button btnCaptcha;
 
     @Override
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
-        editText = (EditText) findViewById(R.id.et_phone);
+//        editText = (EditText) findViewById(R.id.et_phone);
         btnCaptcha = (Button) findViewById(R.id.btn_captcha);
         btnCaptcha.setOnClickListener(this);
         countTimer = new CountTimer(10000, 1000);
@@ -29,6 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+//        if (!isPhoneNumber(editText.getText().toString())) {
+//            Toast.makeText(context, "请输入正确的手机号码", Toast.LENGTH_SHORT).show();
+//            return;
+//        }else {
+//        }
         countTimer.start();
     }
 
@@ -80,6 +84,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btnCaptcha.setClickable(true);
         }
     }
+
+    /**
+     * 判断用户输入的手机号码是否正确
+     *
+     * @return
+     */
+//    public boolean isPhoneNumber(String str) {
+//        String strRegex = "[1][34578]\\d{9}";
+//        boolean result = str.matches(strRegex);
+//        return result;
+//    }
 
     @Override
     protected void onDestroy() {
