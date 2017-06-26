@@ -22,7 +22,6 @@
         android:id="@+id/btn_captcha"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         android:background="#c7c7c7"
         android:text="获取验证码"
         android:textAllCaps="false"
